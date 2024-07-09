@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model refer{
+  id Int @id @default(autoincrement())
+  referrerName String @db.VarChar(255)
+  referrerEmail String 
+  referrerPhone String @db.VarChar(255)
+  refereeName String @db.VarChar(255)
+  refereeEmail String 
+  refereePhone String @db.VarChar(255)
+  selectedProgram String @db.VarChar(255)
+}
