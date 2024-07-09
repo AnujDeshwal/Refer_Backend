@@ -19,7 +19,7 @@ app.post("/create-refer" ,async(req,res,next)=>{
     try{
         const {referrerName , referrerEmail , referrerPhone,refereeName , refereeEmail , refereePhone , selectedProgram}  = req.body;
         const data = req.body;
-        const response = await prisma.refer.create({data})
+        // const response = await prisma.refer.create({data})
         const subject1 = "Confirmation of referrence"
         const subject2 = `Referral from ${referrerName}`
         const html1 = `<p>Hi ${referrerName} , You have successfully referred ${refereeName} for ${selectedProgram}.</p><br><h1>Regards,</h1><h1>Accredian</h1>`;
