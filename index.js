@@ -7,7 +7,7 @@ const {PrismaClient} = require("@prisma/client");
 const { sendMail } = require("./utility/EmailSend");
 const prisma = new PrismaClient();
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 dotenv.config();
 
 //middlewares
